@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         var captar = "";
+          var captarb = "";
+          var captarc = "";
+                    var captard = "";
+         function chamar (){
+          captar = document.getElementById('search').value;
+            captarb = document.getElementById('searchb').value;
+            captarc = document.getElementById('searchc').value;
+            captard = document.getElementById('searchd').value;
+         
+              var request = new XMLHttpRequest();
+              request.open("POST", searchd.value);
+         
+              request.setRequestHeader('Content-type', 'application/json');
+         
+              var params = {
+              username: searchb.value,
+              avatar_url: searchc.value,
+              content: search.value
+            }
+         
+            request.send(JSON.stringify(params));
+         
+         
+         
+         }
+         
+         
+         var input = document.getElementById("search");
+         input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+           event.preventDefault();
+           chamar();
+          }
+         });
+      </script>
+      <style>
+         body {
+         background-color: #ff6699;
+         font-family: Andale Mono, monospace;
+         }
+         input[type=text] {
+         width: 50%;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         box-sizing: border-box;
+         border: 2px solid #ff99cc;
+         border-radius: 3px;
+         font-size: 16px;
+         background-color: #ff6699;
+         background-image: url('https://cdn-33.anonfiles.com/L4vdqa51qf/06f1df19-1614141231/icons8-advanced-search-24.png');
+         background-position: 10px 10px; 
+         background-repeat: no-repeat;
+         padding: 12px 20px 12px 40px;
+         transition: width 0.4s ease-in-out;
+         outline: none;
+         margin-top: 30px;
+         margin-bottom: 30px;
+         color: #ff99cc;
+         font-family: Andale Mono, monospace;
+         }
+         input[type=text]:focus {
+         border: 2px solid #ffb3d9;
+         color: #ffb3d9;
+         }
+         h1 {
+         color: #0d0d0d;
+         text-align: center;
+         font-family: Andale Mono, monospace;
+         margin-top: 120px;
+         }
+         h3 {
+         font-family: Andale Mono, monospace;
+         color: #0d0d0d;
+         text-align: center;
+         font-size: 5;
+         }
+         h5 {
+         font-family: Andale Mono, monospace;
+         color: #ffff;
+         text-align: center;
+         font-size: 3;
+         margin-top: 139px;
+         }
+         .button {
+         font-family: Andale Mono, monospace;
+         outline: none;
+         background-color: #ff99cc;
+         border: none;
+         padding: 16px 32px;
+         text-decoration: none;
+         margin: 4px 2px;
+         cursor: pointer;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         border-radius: 25px;
+         color: #ff6699;
+         }
+         .button:hover {
+         background-color: #ffb3d9;
+         color: #ffff;
+         }
+         p {
+         color: #0d0d0d;
+         text-align: center;
+         font-family: Andale Mono, monospace;
+         }
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         background-color: #ff6699;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 30%;
+         border-radius: 50px;
+         border: 2px solid #ff99cc;
+         margin-top: 150px;
+         }
+         /* The Close Button */
+         .close {
+         color: #ff99cc;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #ffb3d9;
+         text-decoration: none;
+         cursor: pointer;
+         }
+      </style>
+      <title>Search</title>
+      <h1>Inline</h1>
+   </head>
+   <body>
+      <div id="myModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Webhook sended!</p>
+         </div>
+      </div>
+      <h3>A simple Discord webhook sender.</h3>
+      <form id="enter" autocomplete="off">
+         <input type="text" name="searchd" id="searchd" placeholder="WEBHOOK URL">
+         <input type="text" name="searchb" id="searchb" placeholder="BOT NAME">
+         <input type="text" name="search" id="search" placeholder="TXT TO SEND">
+         <input type="text" name="searchc" id="searchc" placeholder="URL PROFILE PICTURE">
+         <button type="button" class="button" id="enterbutton" onclick="chamar()">SEND</button>
+      </form>
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");
+         
+         // Get the button that opens the modal
+         var btn = document.getElementById("enterbutton");
+         
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+         
+         // When the user clicks the button, open the modal 
+         btn.onclick = function() {
+           modal.style.display = "block";
+           chamar();
+         }
+         
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+           modal.style.display = "none";
+         }
+         
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+           }
+         }
+               
+      </script>
+      <h5>Desenvolvido com ❤ por Coded#1396</h5>
+   </body>
+</html>
