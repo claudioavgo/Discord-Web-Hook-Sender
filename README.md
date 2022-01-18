@@ -1,9 +1,7 @@
 <h1 align="center">
   Inline - V1
 </h1>
-<p align="center">
-  Discord Webhook Sender, builded in html, css and JS.
-</p>
+<p align="center">Visit on <a href="http://webhook.coded.today/">webhook.coded.today</a>. Discord Webhook Sender, builded in html, css and JS.</p>
 
 ![demo](./src/website_image.png)
 
